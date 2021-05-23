@@ -1,0 +1,8 @@
+.leftSide{
+    float:left;
+    width: 800px;
+    min-height: 800px;
+}
+.rightSide{
+    float:left;
+}
