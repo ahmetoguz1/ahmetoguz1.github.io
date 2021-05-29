@@ -1,0 +1,215 @@
+<!-- 
+  Filaname: Events.html
+  Information: Events Page
+  Url: http://ceng311.aprogrammer.org/Sprint3/Events.html
+  homepage Url: http://ceng311.aprogrammer.org/Sprint3/index.html
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Set charset utf-8 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- Optional JavaScript for bootstrap pop-up menu --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/4.3.1-bootstrap.min.js"></script>
+
+  <!-- Import javascript backend for Events.html page -->
+  <script src = "js/pages/createEvent.js"></script>
+
+  <!-- Import necessary css files for datePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+  <!-- Import necessary javascript files for datePicker -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/datepicker.js"></script>
+
+  <!-- Set page title -->
+  <title>Wellcome to Photography CLUB</title>
+</head>
+
+<body>
+  <!-- 
+    Open nav tag for navigation bar,
+    It will appear top of the page and it includes buttons that redirect to other html pages
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <!-- Make div with name container for center navbar buttons-->
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="">
+          </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+      <!-- Make a div in navbar section for buttons -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Photos.html">Explore Photos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Education.html" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Education
+            </a>
+            <!-- Make a button for drop down menu links -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="Education.html#photography-techniques">Photography Tecniques</a>
+              <a class="dropdown-item" href="Education.html#chosing-the-right-camera">Chosing the Right Camera</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ContactUs.html">Contact US</a>
+          </li>          
+        </ul>        
+      </div> 
+      <!-- Make new div for Login button to make location where right side of the page -->
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-success" href="Login.html">Login</a>
+          </li>
+        </ul>
+      </div>     
+    </div>    
+  </nav>
+
+  <div class="container mt-10">
+    <h1>Events</h1>
+    <!-- Create a from for getting information from user to create an event-->
+    <form>
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+        <small id="emailHelp" class="form-text text-muted">You need to enter a valid event name.</small>
+      </div>
+      <div class="form-group">
+        <label for="eventLocation">Event Location</label>
+        <input type="text" class="form-control" id="eventLocation" placeholder="Event Location (City)">
+      </div>
+      <div class="form-group">
+        <label for="eventLocation">Select the Event Date</label>
+        <input type="text" id="datepicker" class ="form-control" placeholder="12/31/2021 (Mounth/Day/Year)" >
+      </div>
+      <button type="submit" class="btn btn-primary mt-3" onclick="CreateEvent();">Create Event</button>
+    </form>
+    <br>
+    <div class="row">
+      <div class="span12">
+        <table class="table-condensed table-bordered table-striped">
+          <thead>
+            <tr>
+              <th colspan="7">
+                <a class="btn"><i class="icon-chevron-left"></i></a>
+                <a class="btn">February 2012</a>
+                <a class="btn"><i class="icon-chevron-right"></i></a>
+              </th>
+            </tr>
+            <tr>
+              <th>Su</th>
+              <th>Mo</th>
+              <th>Tu</th>
+              <th>We</th>
+              <th>Th</th>
+              <th>Fr</th>
+              <th>Sa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="muted">29</td>
+              <td class="muted">30</td>
+              <td class="muted">31</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>13</td>
+              <td>14</td>
+              <td>15</td>
+              <td>16</td>
+              <td>17</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>19</td>
+              <td><strong>20</strong></td>
+              <td>21</td>
+              <td>22</td>
+              <td>23</td>
+              <td>24</td>
+              <td>25</td>
+            </tr>
+            <tr>
+              <td>26</td>
+              <td>27</td>
+              <td>28</td>
+              <td>29</td>
+              <td class="muted">1</td>
+              <td class="muted">2</td>
+              <td class="muted">3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum lacinia mi, vitae pretium ex bibendum vel.
+      Integer euismod placerat felis, ut porta quam ultrices at. Aliquam mauris odio, tincidunt non maximus et,
+      scelerisque ut lorem. Nunc non augue at dolor dictum vehicula. Etiam quis purus nibh. Duis placerat purus ipsum.
+      Sed ac tortor eu felis maximus posuere sed et urna.
+    </p>
+    <p>
+      In risus diam, vehicula a libero in, molestie hendrerit velit. Curabitur id tortor massa. Nam interdum diam a
+      eros maximus vulputate quis nec urna. Integer lacinia convallis diam, id condimentum neque dictum at.
+      Suspendisse ex nisi, finibus vel imperdiet eu, scelerisque ut magna. Morbi vel velit ut libero euismod venenatis
+      id in massa. Phasellus volutpat sodales lobortis. Vivamus et libero posuere, imperdiet leo ut, semper odio. Nam
+      tincidunt elit id est bibendum, non tempor quam congue. Suspendisse potenti. Sed lorem lectus, bibendum vitae
+      varius eget, consequat et felis. Vivamus pulvinar pharetra magna, rutrum aliquam justo commodo nec.
+    </p>
+  </div>
+
+  <!-- Open the div for foother -->
+  <div class="footer-margin">
+    <footer class="footer fixed-bottom text-light bg-dark">
+      <!-- Make text to center of the page -->
+      <div class="text-center p-4 ">
+        © 2021 Copyright Ahmet Oğuz ŞENOCAK
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>

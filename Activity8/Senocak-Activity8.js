@@ -1,9 +1,29 @@
 // create variables for 
 var levelInLevel = 1;
 var level = 1;
+var timer = null;
 
 // set timeout 500ms
 var timeout = 500;
+
+var btn = document.getElementById("btnClickMe");
+interval_id = 0,
+
+
+/*
+btn.onmouseover = function () {
+    interval_id = window.setInterval(function () {
+    btn = document.getElementById("btnClickMe");
+    btn.style.marginLeft = Math.random() * 695 + "px";
+    btn.style.marginTop = Math.random() * 800 + "px"; 
+    }, timeout);
+};
+
+btn.onmouseout = function () {
+    window.clearInterval(interval_id);
+};
+*/
+
 
 function levelManager()
 {    
@@ -23,12 +43,12 @@ function levelManager()
 }
 
 // set timer for mouseover to change button location
-function setTimer()
+ function setTimer()
 {
-    setTimeout(function(){
-    var btn = document.getElementById("btnClickMe");
-    btn.style.marginLeft = Math.random() * 695 + "px";
-    btn.style.marginTop = Math.random() * 800 + "px";
-  },
-  timeout);
+        clearTimeout(timer);
+        timer = window.setTimeout(function(){                      
+        btn = document.getElementById("btnClickMe");
+        btn.style.marginLeft = Math.random() * 695 + "px";
+        btn.style.marginTop = Math.random() * 800 + "px";    
+    },timeout);         
 }

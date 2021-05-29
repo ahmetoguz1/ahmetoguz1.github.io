@@ -1,0 +1,271 @@
+<!-- 
+    Story Show Gallery (SSG) - https://roman-flossler.github.io/StoryShowGallery/
+    Copyright (C) Roman Flössler - SSG is Licensed under GPLv3 
+
+    SSG on Github: https://github.com/Roman-Flossler/Simple-Scroll-Gallery.git       
+ 
+    If you want to load this file behind gallery, write its URL in configuration section at beginning of ssg.js. 
+    JS cannot load a local file due to a security reasons, so upload this file somewhere on your website -->
+
+<style type='text/css' media='all'>
+
+    #SSG_lastone #SSG_loadInto {
+        margin-top: 3em;
+        text-align: center;
+    }
+
+    #SSG_lastone .SSG_signpostH1 {
+        font-size: 200%;
+        color: #ababab;
+        margin: 0em;
+        font-weight: lighter;
+    }
+
+    #SSG_lastone p.SSG_signpostText {
+        background: none;
+        line-height: 1.6em;
+        color: #888888;
+        margin-bottom: 0 !important;
+        padding: 0;
+        text-shadow: none;
+    }
+
+    #SSG_lastone #opening {
+        margin-bottom: 0.8em;
+    }
+
+    #SSG_lastone .SSG_icell .SSG_icapt {
+        transform: rotate(7deg);
+        display: block;
+        margin: 0.3vh 10px 0 0;
+        color: #bfbfbf;
+        font-weight: lighter;
+    }
+
+    #SSG_lastone .SSG_icell .link-outside::before {
+        content: '⧉ ';
+        color: #71a7b7;
+    }
+
+    #SSG_lastone .SSG_icell .gallery-link::before {
+        content: '▣ ';
+        color: #71a7b7;        
+    }
+
+    #SSG_lastone .SSG_icell .hash-link::before {
+        content: '# ';
+        color: #71a7b7;        
+        font-size: 113%;
+    }    
+
+    #SSG_lastone .SSG_icell .info-link::before {
+        content: 'ⓘ ';
+        color: #71a7b7;
+    }
+
+    #SSG_lastone a {
+        text-decoration: none;
+    }
+
+    #SSG_lastone .SSG_icell:hover>a {
+        text-decoration: underline;
+        text-decoration-color: #FF706C;
+    }
+
+    #SSG_lastone .SSG_icell {
+        margin-bottom: 3vh;
+        max-height: 250px;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        margin-top: 2vh;
+        width: 20vw;
+        background: none;
+        display: inline-block;
+        text-align: center;
+        vertical-align: text-top;
+    }
+
+    #SSG_lastone .SSG_icell img {
+        width: 11vw;
+        max-width: 150px !important;
+        border: none;
+        opacity: 1;
+        margin: 0;
+        border-radius: 100px;
+        transition: 0.3s;
+    }
+
+    #SSG_lastone .SSG_icell:hover img {
+        border-radius: 11px;
+        transform: rotate(7deg);
+    }
+
+    .ssglight #SSG_lastone .SSG_icell .SSG_icapt, .ssglight #SSG_lastone .SSG_signpostH1, .ssglight #SSG_lastone p.SSG_signpostText {
+        color: #333333;
+    }
+
+    #SSG_lastone .SSG_icell span::before {
+        color: #008cb5 !important;
+    }
+
+
+    @media (max-width: 860px) and (orientation: landscape),
+    (max-width: 750px) and (orientation: portrait) {
+
+        @media (orientation: landscape) {
+            #SSG_lastone #SSG_loadInto {
+                margin-top: 2em;
+            }
+        }
+
+        #SSG_lastone .SSG_signpostH1 {
+            font-size: 180%;
+        }
+
+        #SSG_lastone .SSG_icell img {
+            width: 16vw;
+        }
+    }
+
+    @media (orientation: portrait) and (max-width: 600px) {
+
+        #SSG_lastone .SSG_icell {
+            margin-left: 4vw;
+            margin-right: 4vw;
+            width: 39vw;
+        }
+
+        #SSG_lastone .SSG_icell img {
+            width: 16vh;
+        }
+
+        #SSG_lastone .SSG_icell .SSG_icapt {
+            margin: 0px 10px 0 0;
+        }
+    }
+
+    @media (orientation: portrait) and (min-width: 601px) {
+
+        #SSG_lastone .SSG_icell {
+            margin-bottom: 0;
+            margin-left: 2vh;
+            margin-right: 2vh;
+            width: 18vh;
+        }
+
+        #SSG_lastone .SSG_icell img {
+            width: 14vh;
+        }
+
+        @media (max-aspect-ratio: 11/16) {
+            #SSG_lastone .SSG_icell {
+                width: 13.3vh;
+            }
+        }
+    }
+
+    @media (min-width: 1400px) {
+        #SSG_lastone .SSG_icell {
+            width: 15vw;
+        }
+    }
+
+
+    @media (min-height: 888px) {
+
+        #SSG_lastone #opening {
+            margin-bottom: 1.5em;
+        }
+
+        #SSG_lastone .SSG_icell {
+            height: 29vh;
+        }
+
+        #SSG_lastone .SSG_icell img {
+            margin: 0.1em 0 0.5em 0;
+        }
+
+        #SSG_lastone #SSG_loadInto {
+            margin-top: 4.4em;
+        }
+    }
+
+    @media (min-height: 1068px) {
+
+        #SSG_lastone #opening {
+            margin-bottom: 2em;
+        }
+
+        #SSG_lastone p.SSG_signpostText {
+            padding-top: 0.5em;
+        }
+
+        #SSG_lastone #SSG_loadInto {
+            margin-top: 6em;
+        }
+    }
+</style>
+
+<div id="opening">
+    <span class="SSG_signpostH1">See other galleries</span><br clear='all' />
+    <p class="SSG_signpostText">After the last image, SSG can load this html file. Edit it to your liking.</p>
+</div>
+
+<div class="SSG_icell">
+    <a href="javascript: SSG.restart({ initImgID: 3, fs: true })">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_code.jpg">
+        <span class="SSG_icapt SSG_text gallery-link">Sample HTML code<br /> & SSG features</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="javascript: SSG.restart({ initImgID: 12 })">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_rabbit.jpg">
+        <span class="SSG_icapt SSG_text gallery-link">Sample gallery <br />with an error</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="javascript: SSG.restart({ initImgID: 11, fs: true })">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_fifth-element.jpg">
+        <span class="SSG_icapt SSG_text gallery-link">Models shooting <br />in Michal mine</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="javascript: SSG.restart( { imgs: iceland, initImgID: 1, fs: true });">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_iceland.jpg">
+        <span class="SSG_icapt SSG_text gallery-link">Iceland <br />Aurora</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="#deeplinking">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_deeplinkimage.png">
+        <span class="SSG_icapt SSG_text hash-link">Deep linking in SSG</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="https://roman-flossler.github.io/StoryShowGallery/example/index.html#svetlusky" target="_blank">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_noexit.jpg">
+        <span class="SSG_icapt SSG_text link-outside">No e×it mode</span>
+    </a>
+</div>
+
+<div class="SSG_icell">
+    <a href="https://roman-flossler.github.io/StoryShowGallery/wordpress/" target="_blank">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_ssg.jpg">
+        <span class="SSG_icapt SSG_text link-outside">SSG for Wordpress</span>
+    </a>
+</div>
+
+
+<div class="SSG_icell">
+    <a href="https://www.faroeislands.io/" target="_blank">
+        <img src="https://roman-flossler.github.io/StoryShowGallery/thumbs/thumb_faroeIslands.jpg">
+        <span class="SSG_icapt SSG_text link-outside">Faroe Islands<br>visual guide</span>
+    </a>
+</div>
+
+<br clear='all' />

@@ -1,0 +1,61 @@
+.footer-margin {
+    height: 100px;
+  }
+.map{
+  margin-top:20px;
+}
+.icon {
+  font-size: 37px;
+  -webkit-font-smoothing: antialiased;
+  width: 52px;
+  float: left;
+  background: #DD4B37;
+  color: #FFF;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  line-height: 50px;
+  margin-bottom: 14px;  
+}
+.img1 {
+  width: 50%;
+} 
+.img1 p{
+  float:right;  
+}
+
+.h2title {
+  color: #262626;
+  font-size: 32px;
+  text-shadow: 0px 1px 1px #fff;
+  line-height: 50px;
+  padding: 0px;
+  float: left;
+  display: inline;
+  text-align: left;
+  text-overflow: ellipsis;
+  margin: 0 0 0 14px;
+  padding-bottom: 10px;
+}
+.section-title{
+  margin-top:25px;
+  display: block;
+}
+.rightParagraph{
+  float:right;
+  width: 40%;
+}
+.chosecamera{
+  margin-top:20px;
+}
+.mt-10{
+  margin-top:100px;
+}
+#photography-techniques
+{
+  padding-top:75px;
+}
+#chosing-the-right-camera
+{
+  padding-top:75px;
+}
