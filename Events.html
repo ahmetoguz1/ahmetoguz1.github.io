@@ -1,0 +1,211 @@
+<!-- 
+  Filaname: Events.html
+  Information: Education Page
+  Url: http://ceng311.aprogrammer.org/Sprint4/Events.html
+  homepage Url: http://ceng311.aprogrammer.org/Sprint4/index.html
+  webpage used for create an event and shows the events that created before
+  datepicker, event callender, and ajax parameters used in this page
+  created events information coming from local JSON file
+
+  weather information coming from openweathermap website
+  it is an api services and I used it to find temerature where entered city and date 
+  It returns a JSON object, deatils js/pages/weather.js
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Set charset utf-8 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- Optional JavaScript for bootstrap pop-up menu -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/4.3.1-bootstrap.min.js"></script>
+
+  <!-- Import necessary css files for datePicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+  <!-- Event Calender -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css" />
+  <link rel="stylesheet" href="css/theme-glass.css" />
+  <script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.min.js"></script>
+
+  <!-- Import necessary javascript files for datePicker -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="js/plugins/datepicker.js"></script>
+
+  <!-- Import javascript backend for Events.html page -->
+  <script src="js/pages/eventCallender.js"></script>
+
+  <!-- Import javascript that helps to interact with weather API -->
+  <script src="js/pages/weather.js"></script>
+
+  <!-- Sweetalert -->
+  <script src = "https://cdn.jsdelivr.net/npm/sweetalert2@11.0.12/dist/sweetalert2.all.min.js"></script>
+  
+
+  <!-- Import css for weather widget-->
+  <link rel="stylesheet" href="css/weatherWidget.css" >
+  
+  <!-- Set page title -->
+  <title>Wellcome to Photography CLUB</title>
+</head>
+
+<body>
+  <!-- 
+    Open nav tag for navigation bar,
+    It will appear top of the page and it includes buttons that redirect to other html pages
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <!-- Make div with name container for center navbar buttons-->
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Make a div in navbar section for buttons -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Photos.html">Explore Photos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Education.html" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Education
+            </a>
+            <!-- Make a button for drop down menu links -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="Education.html#photography-techniques">Photography Tecniques</a>
+              <a class="dropdown-item" href="Education.html#chosing-the-right-camera">Chosing the Right Camera</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ContactUs.html">Contact US</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Make new div for Login button to make location where right side of the page -->
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-success" href="Login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-10">
+    <div class="row ">
+      <div class="col-sm-8 ">
+        <h1>Events</h1>
+        <div class="row">
+          <p>On this page, you can create an event for a photo shoot or meet the club members, or you can see the events
+            that have been created before.</p>
+        </div>
+        <!-- Create a from for getting information from user to create an event-->
+        <form>
+          <div class="form-group">
+            <label for="eventName" class="infoLabel">Event Name</label>
+            <input type="text" class="form-control" id="eventName" placeholder="Event Name">
+            <small id="emailHelp" class="form-text text-muted">You need to enter a valid event name.</small>
+          </div>
+          <div class="form-group">
+            <label for="eventLocation" class="infoLabel">Event Location</label>
+            <input type="text" class="form-control" id="eventLocation" placeholder="Event Location (City)">
+            <small id="locationHelp" class="form-text text-muted">After entering the city information, you can see the
+              weather conditions according to the city you entered on the right.</small>
+
+          </div>
+          <div class="form-group">
+            <label for="eventDate" class="infoLabel">Select the Event Date</label>
+            <input type="text" id="datepicker" class="form-control" placeholder="2021-06-06 (Year/Month/Day)"
+              autocomplete="off">
+            <small id="locationHelp" class="form-text text-muted">If the date you selected is within 7 days and you have
+              entered city information, you can see the weather conditions according to the city and day you selected on
+              the right.</small>
+          </div>
+          <div class="form-group">
+            <label for="eventTime" class="infoLabel">Time of the Event</label>
+            <input type="text" class="form-control" id="eventTime" placeholder="14:30">
+          </div>
+          <!-- Create Event button, when the user click it, creating event with values that entered from user in eventCallender.js-->
+          <button id="btn" class="btn btn-primary mt-3">Create Event</button>
+        </form>
+        <br>
+      </div>
+      <div class="col-sm-4">
+        <div class="card p-4">
+          <div class="d-flex">
+            <h6 class="flex-grow-1 city">London</h6>
+            <h6 class="flex-grow-3 city" id="weatherDate">2021-06-11</h6>
+          </div>
+          <div class="d-flex flex-column temp">
+            <img alt="" id="wicon">
+            <h3 class="mb-0 font-weight-bold tetete" id="heading"> 13° C </h3>
+            <span id="status">Stormy</span>
+          </div>
+          <div class="d-flex">
+            <h6 id="sunrise">Sunset: 16:08</h6>
+          </div>
+          <div class="d-flex">
+            <h6 id="sunset">Sunrise: 16:08</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row for created events, it will show a callender and you can see a dot below the date if the date has a event-->
+    <div class="row">
+      <h2>Created Events</h2>
+      <p>Dates with a dot below indicate previously created events. </p>
+      <p>When you click the date with a dot, you can find information about the event.</p>
+      <div class="col-sm-4">
+        <div id="color-calendar"></div>
+      </div>
+
+      <!-- If selected date has a date, shows information about it in this section -->
+      <div class="col-sm-8">
+        <h3>Events of Selected Day:</h3>
+        <div class="events-display"></div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+
+  <!-- Open the div for foother -->
+  <div class="footer-margin">
+    <footer class="footer fixed-bottom text-light bg-dark">
+      <!-- Make text to center of the page -->
+      <div class="text-center p-4 ">
+        © 2021 Copyright Ahmet Oğuz ŞENOCAK
+      </div>
+    </footer>
+  </div>
+
+</body>
+<!-- Import javascript backend for Events.html page -->
+
+
+</html>

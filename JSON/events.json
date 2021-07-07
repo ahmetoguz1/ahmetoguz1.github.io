@@ -1,0 +1,51 @@
+[
+  {
+    "start": "2021-06-01T06:00:00",
+    "end": "2021-06-01T20:30:00",
+    "name": "Animals",
+    "time": "10:30",
+    "location": "Kurtuluş Parkı ANKARA"
+  },
+  {
+    "start": "2021-06-15T06:00:00",
+    "end": "2021-06-15T20:30:00",
+    "name": "Nature",
+    "time": "10:30",
+    "location": "Kurtuluş Parkı ANKARA"
+  },
+  {
+    "start": "2021-06-16T06:00:00",
+    "end": "2021-06-16T20:30:00",
+    "name": "Welcome to summer",
+    "time": "09:30",
+    "location": "Göksu Parkı ANKARA"
+  },
+  {
+    "start": "2021-06-16",
+    "end": "2021-06-16",
+    "name": "Traditional meet and greet",
+    "time": "11:30",
+    "location": "AYBU Etlik 15 Temmuz Yerleşkesi"
+  },
+  {
+    "start": "2021-06-27",
+    "end": "2021-06-27",
+    "name": "Graduation 1",
+    "time": "12:30",
+    "location": "AYBU Etlik 15 Temmuz Yerleşkesi"
+  },
+  {
+    "start": "2021-06-30",
+    "end": "2021-06-30",
+    "name": "Graduation 2",
+    "time": "12:30",
+    "location": "AYBU Etlik 15 Temmuz Yerleşkesi"
+  },
+  {
+    "start": "2021-07-03",
+    "end": "2021-07-03",
+    "name": "Kapadokya",
+    "time": "06:00",
+    "location": "We are going to Cappadocia!"
+  }
+]

@@ -1,0 +1,133 @@
+<!-- 
+  Filaname: Login.html
+  Information: User Login Page
+  Url: http://ceng311.aprogrammer.org/Sprint4/Login.html
+  homepage Url: http://ceng311.aprogrammer.org/Sprint4/index.html
+  webpage used for user login
+-->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+
+  <!-- Set charset utf-8 -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/validator.css" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/4.3.1-bootstrap.min.js"></script>
+
+  <!-- Import jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="js/plugins/validator.js"></script>
+
+  <!-- Import javascript file for backend -->
+  <script src="js/pages/login.js"></script>
+
+  <!-- Sweetalert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.12/dist/sweetalert2.all.min.js"></script>
+
+
+  <!-- Set page title -->
+  <title>Wellcome to Photography CLUB</title>
+</head>
+
+<body>
+  <!-- 
+    Open nav tag for navigation bar,
+    It will appear top of the page and it includes buttons that redirect to other html pages
+  -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+    <!-- Make div with name container for center navbar buttons-->
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/logo.png" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Make a div in navbar section for buttons -->
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Photos.html">Explore Photos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="Education.html" id="navbarDropdownMenuLink" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Education
+            </a>
+            <!-- Make a button for drop down menu links -->
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="Education.html#photography-techniques">Photography Tecniques</a>
+              <a class="dropdown-item" href="Education.html#chosing-the-right-camera">Chosing the Right Camera</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ContactUs.html">Contact US</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Make new div for Login button to make location where right side of the page -->
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-success" href="Login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- open a div tag with class center that will include information which specific content to the active page -->
+  <div class="container mt-10">
+    <div class="center">
+      <h1>Login</h1>
+      <form id="registration_form">
+        <div>
+          <input type="text" id="form_fname" required="">
+          <span class="error_form" id="fname_error_message"></span>
+          <label>
+            Username
+          </label>
+        </div>
+        <div>
+          <input type="password" id="form_password" required="">
+          <span class="error_form" id="password_error_message"></span>
+          <label>Password</label>
+        </div>
+        <input type="submit" value="Login" id="btnLogin">
+      </form>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <!-- Open the div for foother -->
+  <div class="footer-margin">
+    <footer class="footer fixed-bottom text-light bg-dark">
+      <!-- Make text to center of the page -->
+      <div class="text-center p-4 ">
+        © 2021 Copyright Ahmet Oğuz ŞENOCAK
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
